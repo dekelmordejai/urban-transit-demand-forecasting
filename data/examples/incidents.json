@@ -1,0 +1,13 @@
+[
+  {
+    "incident_id": "SYN_INC_01",
+    "scope": "station",
+    "line_id": "SYN_L1",
+    "station_id": "SYN_A",
+    "start": "2026-01-05T23:45:00-06:00",
+    "end": "2026-01-06T00:15:00-06:00",
+    "known_at": "2026-01-06T09:00:00-06:00",
+    "kind": "station_closure",
+    "source": "synthetic demonstration"
+  }
+]

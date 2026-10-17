@@ -1,0 +1,15 @@
+name: Feature request
+description: Propose a scoped improvement
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Problem and proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria and milestone
+    validations:
+      required: true

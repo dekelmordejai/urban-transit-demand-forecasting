@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "date",
+    "is_holiday",
+    "is_bridge_day",
+    "is_school_break",
+    "known_at",
+    "source"
+  ],
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_holiday": {
+      "type": "boolean"
+    },
+    "is_bridge_day": {
+      "type": "boolean"
+    },
+    "is_school_break": {
+      "type": "boolean"
+    },
+    "known_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

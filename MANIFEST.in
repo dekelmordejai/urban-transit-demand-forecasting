@@ -1,0 +1,5 @@
+include CONTRIBUTING.md SECURITY.md
+include requirements-demo.txt
+recursive-include docs *.md *.svg
+recursive-include schemas *.json
+recursive-include data/examples *.csv *.json

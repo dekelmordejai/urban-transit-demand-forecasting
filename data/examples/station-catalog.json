@@ -1,0 +1,19 @@
+{
+  "version": "synthetic-example-v1",
+  "stations": [
+    {
+      "line_id": "SYN_L1",
+      "station_id": "SYN_A",
+      "name": "Synthetic Alpha",
+      "valid_from": "2026-01-05T00:00:00-06:00",
+      "valid_to": "2026-01-06T00:00:00-06:00"
+    },
+    {
+      "line_id": "SYN_L2",
+      "station_id": "SYN_B",
+      "name": "Synthetic Beta",
+      "valid_from": "2026-01-05T00:00:00-06:00",
+      "valid_to": "2026-01-06T00:00:00-06:00"
+    }
+  ]
+}

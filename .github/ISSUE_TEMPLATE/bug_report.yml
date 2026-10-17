@@ -1,0 +1,14 @@
+name: Bug report
+description: Report a reproducible issue using synthetic data only
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction with synthetic data
+      description: Include expected/actual behavior and package version. No institutional records.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation evidence

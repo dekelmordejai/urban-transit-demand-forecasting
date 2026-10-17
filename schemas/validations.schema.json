@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "LINEA",
+    "ID_ESTACION",
+    "ESTACION",
+    "FECHA",
+    "HORA_15MIN",
+    "TX_3_INGRESO",
+    "TX_4_GRATUIDAD",
+    "TX_7_TRANSBORDO",
+    "TX_300_SALIDA",
+    "TX_0_OTRO"
+  ],
+  "properties": {
+    "LINEA": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ID_ESTACION": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ESTACION": {
+      "type": "string",
+      "minLength": 1
+    },
+    "FECHA": {
+      "type": "string",
+      "format": "date"
+    },
+    "HORA_15MIN": {
+      "type": "string",
+      "pattern": "^([01][0-9]|2[0-3]):(00|15|30|45):00$"
+    },
+    "TX_3_INGRESO": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "TX_4_GRATUIDAD": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "TX_7_TRANSBORDO": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "TX_300_SALIDA": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "TX_0_OTRO": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

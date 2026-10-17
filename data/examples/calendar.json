@@ -1,0 +1,10 @@
+[
+  {
+    "date": "2026-01-05",
+    "is_holiday": false,
+    "is_bridge_day": false,
+    "is_school_break": true,
+    "known_at": "2025-12-01T00:00:00-06:00",
+    "source": "synthetic demonstration, not an official calendar"
+  }
+]

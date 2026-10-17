@@ -1,0 +1,35 @@
+{
+  "delivery_id": "SYN_EXAMPLE_V1",
+  "partition_id": "SYN_EXAMPLE",
+  "version": 1,
+  "supersedes": null,
+  "filename": "validations.csv",
+  "sha256": "945cd6f74e39196220f77db1ba309fd1dcfe0650a01adf9947704ed820dd9cc9",
+  "start": "2026-01-05T06:00:00-06:00",
+  "end": "2026-01-05T06:30:00-06:00",
+  "scope": [
+    {
+      "line_id": "SYN_L1",
+      "station_id": "SYN_A"
+    },
+    {
+      "line_id": "SYN_L2",
+      "station_id": "SYN_B"
+    }
+  ],
+  "catalog_version": "synthetic-example-v1",
+  "extracted_at": "2026-01-06T02:00:00-06:00",
+  "available_at": "2026-01-06T02:00:00-06:00",
+  "status": "partial",
+  "zero_policy": "explicit",
+  "row_count": 3,
+  "totals": {
+    "TX_3_INGRESO": 50,
+    "TX_4_GRATUIDAD": 7,
+    "TX_7_TRANSBORDO": 8,
+    "TX_300_SALIDA": 18,
+    "TX_0_OTRO": 3
+  },
+  "gaps": [],
+  "rules_version": "synthetic-example-rules-v1"
+}

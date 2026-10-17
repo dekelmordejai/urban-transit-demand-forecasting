@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "incident_id",
+    "scope",
+    "line_id",
+    "station_id",
+    "start",
+    "end",
+    "known_at",
+    "kind",
+    "source"
+  ],
+  "properties": {
+    "incident_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "enum": [
+        "station",
+        "line",
+        "system"
+      ]
+    },
+    "line_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "station_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "known_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "kind": {
+      "enum": [
+        "station_closure",
+        "short_turn",
+        "traffic_delay"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "const": "station"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "line_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "station_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "const": "line"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "line_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "station_id": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "const": "system"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "line_id": {
+            "type": "null"
+          },
+          "station_id": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

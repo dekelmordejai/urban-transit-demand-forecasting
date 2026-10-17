@@ -1,0 +1,188 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "delivery_id",
+    "partition_id",
+    "version",
+    "supersedes",
+    "filename",
+    "sha256",
+    "start",
+    "end",
+    "scope",
+    "catalog_version",
+    "extracted_at",
+    "available_at",
+    "status",
+    "zero_policy",
+    "row_count",
+    "totals",
+    "gaps",
+    "rules_version"
+  ],
+  "properties": {
+    "delivery_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "partition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "filename": {
+      "type": "string",
+      "pattern": "^[^/\\\\]+$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "start": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scope": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "line_id",
+          "station_id"
+        ],
+        "properties": {
+          "line_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "station_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "catalog_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "available_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "partial"
+      ]
+    },
+    "zero_policy": {
+      "enum": [
+        "explicit",
+        "verified_sparse"
+      ]
+    },
+    "row_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "TX_3_INGRESO",
+        "TX_4_GRATUIDAD",
+        "TX_7_TRANSBORDO",
+        "TX_300_SALIDA",
+        "TX_0_OTRO"
+      ],
+      "properties": {
+        "TX_3_INGRESO": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "TX_4_GRATUIDAD": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "TX_7_TRANSBORDO": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "TX_300_SALIDA": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "TX_0_OTRO": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "line_id",
+          "station_id",
+          "start",
+          "end",
+          "reason"
+        ],
+        "properties": {
+          "line_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "station_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reason": {
+            "enum": [
+              "capture_outage",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "rules_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
